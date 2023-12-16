@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344B38CE2B2DDA9D009E937A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B38CD2B2DDA9D009E937A /* LoginScreen.swift */; };
+		344B38D22B2DDF1B009E937A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B38D12B2DDF1B009E937A /* UIColor+Extension.swift */; };
+		344B38D52B2DE7A2009E937A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 344B38D42B2DE7A2009E937A /* IQKeyboardManagerSwift */; };
+		344B38D82B2DEA28009E937A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 344B38D72B2DEA28009E937A /* GoogleService-Info.plist */; };
+		344B38DB2B2DEB16009E937A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 344B38DA2B2DEB16009E937A /* FirebaseAuth */; };
 		B29CFD9D2B2DD4EA001C34F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFD9C2B2DD4EA001C34F3 /* AppDelegate.swift */; };
 		B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFD9E2B2DD4EA001C34F3 /* SceneDelegate.swift */; };
-		B29CFDA12B2DD4EA001C34F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDA02B2DD4EA001C34F3 /* ViewController.swift */; };
-		B29CFDA42B2DD4EA001C34F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29CFDA22B2DD4EA001C34F3 /* Main.storyboard */; };
+		B29CFDA12B2DD4EA001C34F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDA02B2DD4EA001C34F3 /* LoginViewController.swift */; };
 		B29CFDA62B2DD4ED001C34F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29CFDA52B2DD4ED001C34F3 /* Assets.xcassets */; };
 		B29CFDA92B2DD4ED001C34F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29CFDA72B2DD4ED001C34F3 /* LaunchScreen.storyboard */; };
 		B29CFDB42B2DD4EE001C34F3 /* MyPetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDB32B2DD4EE001C34F3 /* MyPetTests.swift */; };
@@ -36,11 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		344B38CD2B2DDA9D009E937A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		344B38D12B2DDF1B009E937A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		344B38D72B2DEA28009E937A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B29CFD992B2DD4EA001C34F3 /* MyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29CFD9C2B2DD4EA001C34F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29CFD9E2B2DD4EA001C34F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B29CFDA02B2DD4EA001C34F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B29CFDA32B2DD4EA001C34F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B29CFDA02B2DD4EA001C34F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B29CFDA52B2DD4ED001C34F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B29CFDA82B2DD4ED001C34F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B29CFDAA2B2DD4ED001C34F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344B38D52B2DE7A2009E937A /* IQKeyboardManagerSwift in Frameworks */,
+				344B38DB2B2DEB16009E937A /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344B38CB2B2DDA71009E937A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				344B38CC2B2DDA84009E937A /* Screen */,
+				B29CFDA02B2DD4EA001C34F3 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		344B38CC2B2DDA84009E937A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344B38CD2B2DDA9D009E937A /* LoginScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		344B38CF2B2DDF04009E937A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				344B38D02B2DDF0A009E937A /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		344B38D02B2DDF0A009E937A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				344B38D12B2DDF1B009E937A /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		344B38D92B2DEB16009E937A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B29CFD902B2DD4EA001C34F3 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +131,7 @@
 				B29CFDB22B2DD4EE001C34F3 /* MyPetTests */,
 				B29CFDBC2B2DD4EE001C34F3 /* MyPetUITests */,
 				B29CFD9A2B2DD4EA001C34F3 /* Products */,
+				344B38D92B2DEB16009E937A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,11 +148,12 @@
 		B29CFD9B2B2DD4EA001C34F3 /* MyPet */ = {
 			isa = PBXGroup;
 			children = (
+				344B38CF2B2DDF04009E937A /* Utils */,
+				344B38CB2B2DDA71009E937A /* Login */,
 				B29CFD9C2B2DD4EA001C34F3 /* AppDelegate.swift */,
 				B29CFD9E2B2DD4EA001C34F3 /* SceneDelegate.swift */,
-				B29CFDA02B2DD4EA001C34F3 /* ViewController.swift */,
-				B29CFDA22B2DD4EA001C34F3 /* Main.storyboard */,
 				B29CFDA52B2DD4ED001C34F3 /* Assets.xcassets */,
+				344B38D72B2DEA28009E937A /* GoogleService-Info.plist */,
 				B29CFDA72B2DD4ED001C34F3 /* LaunchScreen.storyboard */,
 				B29CFDAA2B2DD4ED001C34F3 /* Info.plist */,
 			);
@@ -143,6 +193,10 @@
 			dependencies = (
 			);
 			name = MyPet;
+			packageProductDependencies = (
+				344B38D42B2DE7A2009E937A /* IQKeyboardManagerSwift */,
+				344B38DA2B2DEB16009E937A /* FirebaseAuth */,
+			);
 			productName = MyPet;
 			productReference = B29CFD992B2DD4EA001C34F3 /* MyPet.app */;
 			productType = "com.apple.product-type.application";
@@ -191,7 +245,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					B29CFD982B2DD4EA001C34F3 = {
 						CreatedOnToolsVersion = 14.3;
@@ -215,6 +269,10 @@
 				Base,
 			);
 			mainGroup = B29CFD902B2DD4EA001C34F3;
+			packageReferences = (
+				344B38D32B2DE7A2009E937A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				344B38D62B2DE8F6009E937A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B29CFD9A2B2DD4EA001C34F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +289,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344B38D82B2DEA28009E937A /* GoogleService-Info.plist in Resources */,
 				B29CFDA92B2DD4ED001C34F3 /* LaunchScreen.storyboard in Resources */,
 				B29CFDA62B2DD4ED001C34F3 /* Assets.xcassets in Resources */,
-				B29CFDA42B2DD4EA001C34F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B29CFDA12B2DD4EA001C34F3 /* ViewController.swift in Sources */,
+				B29CFDA12B2DD4EA001C34F3 /* LoginViewController.swift in Sources */,
+				344B38CE2B2DDA9D009E937A /* LoginScreen.swift in Sources */,
 				B29CFD9D2B2DD4EA001C34F3 /* AppDelegate.swift in Sources */,
 				B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */,
+				344B38D22B2DDF1B009E937A /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B29CFDA22B2DD4EA001C34F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B29CFDA32B2DD4EA001C34F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B29CFDA72B2DD4ED001C34F3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -352,6 +404,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -412,6 +465,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -437,12 +491,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4JLFD9VKNK;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,9 +506,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = BackFrontAcademy.MyPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -465,12 +522,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4JLFD9VKNK;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,9 +537,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = BackFrontAcademy.MyPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,6 +662,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		344B38D32B2DE7A2009E937A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.16;
+			};
+		};
+		344B38D62B2DE8F6009E937A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		344B38D42B2DE7A2009E937A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 344B38D32B2DE7A2009E937A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		344B38DA2B2DEB16009E937A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 344B38D62B2DE8F6009E937A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B29CFD912B2DD4EA001C34F3 /* Project object */;
 }

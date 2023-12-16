@@ -23,6 +23,8 @@
 		B29CFDB42B2DD4EE001C34F3 /* MyPetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDB32B2DD4EE001C34F3 /* MyPetTests.swift */; };
 		B29CFDBE2B2DD4EE001C34F3 /* MyPetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDBD2B2DD4EE001C34F3 /* MyPetUITests.swift */; };
 		B29CFDC02B2DD4EE001C34F3 /* MyPetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDBF2B2DD4EE001C34F3 /* MyPetUITestsLaunchTests.swift */; };
+		B29CFE1A2B2E08D5001C34F3 /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE192B2E08D5001C34F3 /* LoginStore.swift */; };
+		B29CFE1C2B2E0E99001C34F3 /* LoginDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE1B2B2E0E99001C34F3 /* LoginDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		B29CFDB92B2DD4EE001C34F3 /* MyPetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29CFDBD2B2DD4EE001C34F3 /* MyPetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUITests.swift; sourceTree = "<group>"; };
 		B29CFDBF2B2DD4EE001C34F3 /* MyPetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B29CFE192B2E08D5001C34F3 /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
+		B29CFE1B2B2E0E99001C34F3 /* LoginDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				344B38CC2B2DDA84009E937A /* Screen */,
 				B29CFDA02B2DD4EA001C34F3 /* LoginViewController.swift */,
+				B29CFE192B2E08D5001C34F3 /* LoginStore.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				344B38CD2B2DDA9D009E937A /* LoginScreen.swift */,
+				B29CFE1B2B2E0E99001C34F3 /* LoginDataProvider.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -351,9 +357,11 @@
 			files = (
 				B29CFDA12B2DD4EA001C34F3 /* LoginViewController.swift in Sources */,
 				344B38CE2B2DDA9D009E937A /* LoginScreen.swift in Sources */,
+				B29CFE1C2B2E0E99001C34F3 /* LoginDataProvider.swift in Sources */,
 				B29CFD9D2B2DD4EA001C34F3 /* AppDelegate.swift in Sources */,
 				B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */,
 				344B38DE2B2DED9C009E937A /* Loading.swift in Sources */,
+				B29CFE1A2B2E08D5001C34F3 /* LoginStore.swift in Sources */,
 				344B38E12B2DEE59009E937A /* BaseViewController.swift in Sources */,
 				344B38E42B2DF01C009E937A /* Alert.swift in Sources */,
 				344B38D22B2DDF1B009E937A /* UIColor+Extension.swift in Sources */,

@@ -8,7 +8,6 @@
 import Foundation
 
 enum TypeSections: Int {
-    
     case petSection = 0
     case upcomingEvents = 1
     case suggestions = 2
@@ -30,9 +29,9 @@ class HomeDataProvider: DataProviderManager <HomeDataProviderProtocol, HomeRespo
         self.delegate = delegate
     }
     
-    func numberOfRowsInSection(indexPath: IndexPath) -> Int {
+    func numberOfRowsInSection(section: Int) -> Int {
         
-        switch indexPath.section {
+        switch section {
         case TypeSections.petSection.rawValue:
             return self.model?.petSection.pets.count ?? 0
 

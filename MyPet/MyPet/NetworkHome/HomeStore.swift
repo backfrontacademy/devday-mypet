@@ -33,23 +33,25 @@ class HomeAPIStore: GenericAPIStore, HomeStore {
             // Crie a tarefa de sessão de dados
             let task = session.dataTask(with: url) { data, response, error in
                 // Verifique se ocorreu algum erro
-                if let error = error {
-                    completion(nil, error as NSError)
-                    return
-                }
+                DispatchQueue.main.async {
+                    if let error = error {
+                        completion(nil, error as NSError)
+                        return
+                    }
 
-                // Verifique se os dados foram recebidos
-                guard let data = data else {
-                    completion(nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Nenhum dado recebido"]))
-                    return
-                }
+                    // Verifique se os dados foram recebidos
+                    guard let data = data else {
+                        completion(nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Nenhum dado recebido"]))
+                        return
+                    }
 
-                // Tente decodificar a resposta
-                do {
-                    let decodedResponse = try JSONDecoder().decode(HomeResponse.self, from: data)
-                    completion(decodedResponse, nil)
-                } catch {
-                    completion(nil, error as NSError)
+                    // Tente decodificar a resposta
+                    do {
+                        let decodedResponse = try JSONDecoder().decode(HomeResponse.self, from: data)
+                        completion(decodedResponse, nil)
+                    } catch {
+                        completion(nil, error as NSError)
+                    }
                 }
             }
 

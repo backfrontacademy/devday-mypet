@@ -93,7 +93,6 @@ class SugestionTableViewCell: UITableViewCell {
             nextDateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             nextDateLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
-            
             arrowImageView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -15),
             arrowImageView.heightAnchor.constraint(equalToConstant: 12),
             arrowImageView.widthAnchor.constraint(equalToConstant: 12),

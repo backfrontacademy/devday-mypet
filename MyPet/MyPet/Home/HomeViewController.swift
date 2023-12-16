@@ -7,9 +7,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     var screen: HomeScreen?
+    var dataProvider: HomeDataProvider = HomeDataProvider()
     
     override func loadView() {
         screen = HomeScreen()
@@ -24,6 +25,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         screen?.headerProtocol(delegate: self)
         screen?.configTableViewProtocols(delegate: self, dataSource: self)
+        dataProvider.setDelegate(delegate: self)
+        dataProvider.getHome()
     }
 }
 
@@ -39,18 +42,18 @@ extension HomeViewController: HeaderViewProtocol {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.dataProvider.numberOfRowsInSection(indexPath: <#T##IndexPath#>)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        switch TypeSections(rawValue: indexPath.row) {
+        case .petSection:
             let cell = tableView.dequeueReusableCell(withIdentifier: AnimalsTableViewCell.identifier, for: indexPath) as? AnimalsTableViewCell
             return cell ?? UITableViewCell()
-        case 1:
+        case .suggestions:
             let cell = tableView.dequeueReusableCell(withIdentifier: NextEventsTableViewCell.identifier, for: indexPath) as? NextEventsTableViewCell
             return cell ?? UITableViewCell()
-        case 2:
+        case .upcomingEvents:
             let cell = tableView.dequeueReusableCell(withIdentifier: SugestionsTableViewCell.identifier, for: indexPath) as? SugestionsTableViewCell
             cell?.setupCell()
             return cell ?? UITableViewCell()
@@ -60,3 +63,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension HomeViewController: HomeDataProviderProtocol {
+    func success(model: Any?) {
+        print(#function)
+    }
+    
+    func errorData(error: NSError?) {
+        print(#function)
+    }
+    
+    func startLoading() {
+        loading?.start()
+    }
+    
+    func stopLoading() {
+        loading?.stop()
+    }
+}

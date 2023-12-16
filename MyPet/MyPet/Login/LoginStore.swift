@@ -41,7 +41,7 @@ class LoginAPIStore: GenericAPIStore, LoginStore {
                 
             }
             
-            if let error {
+            if  error != nil {
                 completion(false, self.error)
             } else {
                 completion(true,nil)

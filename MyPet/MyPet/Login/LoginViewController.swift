@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     var screen: LoginScreen?
     
@@ -34,12 +34,23 @@ extension LoginViewController: LoginScreenProtocol {
     }
     
     func tappedLoginButton() {
-        Auth.auth().signIn(withEmail: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "") { result, error in
+        loading?.start()
+        Auth.auth().signIn(withEmail: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "") { [weak self] result, error in
+            guard let self else { return }
             if let error {
-                print("deu ruimmm -> \(error.localizedDescription)")
+                
+                var alertAction = AlertAction(title: "Tentar novamente", style: .default) { [weak self] action in
+                    guard let self else { return }
+                    tappedLoginButton()
+                }
+                
+                var cancel = AlertAction(title: "Cancelar", style: .cancel, handler: nil)
+                
+                AlertController.show(in: self, title: "Error Login", message: error.localizedDescription, actions: [alertAction, cancel])
             } else {
                 print("usuario logado!!")
             }
+            loading?.stop()
         }
     }
     

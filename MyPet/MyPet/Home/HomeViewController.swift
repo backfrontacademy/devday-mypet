@@ -39,7 +39,7 @@ extension HomeViewController: HeaderViewProtocol {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,6 +49,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: NextEventsTableViewCell.identifier, for: indexPath) as? NextEventsTableViewCell
+            return cell ?? UITableViewCell()
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SugestionsTableViewCell.identifier, for: indexPath) as? SugestionsTableViewCell
+            cell?.setupCell()
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()

@@ -22,6 +22,8 @@
 		344B38FF2B2E217B009E937A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B38FA2B2E217B009E937A /* HomeScreen.swift */; };
 		344B39032B2E2998009E937A /* NextEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B39022B2E2998009E937A /* NextEventsTableViewCell.swift */; };
 		344B39052B2E2A2A009E937A /* EventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B39042B2E2A2A009E937A /* EventsCollectionViewCell.swift */; };
+		344B39082B2E3016009E937A /* SugestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B39072B2E3016009E937A /* SugestionsTableViewCell.swift */; };
+		344B390B2B2E312C009E937A /* SugestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B390A2B2E312C009E937A /* SugestionTableViewCell.swift */; };
 		B29CFD9D2B2DD4EA001C34F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFD9C2B2DD4EA001C34F3 /* AppDelegate.swift */; };
 		B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFD9E2B2DD4EA001C34F3 /* SceneDelegate.swift */; };
 		B29CFDA12B2DD4EA001C34F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFDA02B2DD4EA001C34F3 /* LoginViewController.swift */; };
@@ -68,6 +70,8 @@
 		344B38FA2B2E217B009E937A /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		344B39022B2E2998009E937A /* NextEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventsTableViewCell.swift; sourceTree = "<group>"; };
 		344B39042B2E2A2A009E937A /* EventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewCell.swift; sourceTree = "<group>"; };
+		344B39072B2E3016009E937A /* SugestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionsTableViewCell.swift; sourceTree = "<group>"; };
+		344B390A2B2E312C009E937A /* SugestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestionTableViewCell.swift; sourceTree = "<group>"; };
 		B29CFD992B2DD4EA001C34F3 /* MyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29CFD9C2B2DD4EA001C34F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29CFD9E2B2DD4EA001C34F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,9 +187,9 @@
 		344B38F32B2E217B009E937A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				344B39092B2E3090009E937A /* Screen */,
 				344B38F42B2E217B009E937A /* Cells */,
 				344B38F72B2E217B009E937A /* HomeViewController.swift */,
-				344B38FA2B2E217B009E937A /* HomeScreen.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 		344B38F42B2E217B009E937A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				344B39062B2E3000009E937A /* Sugestions */,
 				344B39012B2E297A009E937A /* NextEvents  */,
 				344B39002B2E2936009E937A /* Animals */,
 			);
@@ -223,6 +228,23 @@
 				344B39022B2E2998009E937A /* NextEventsTableViewCell.swift */,
 			);
 			path = "NextEvents ";
+			sourceTree = "<group>";
+		};
+		344B39062B2E3000009E937A /* Sugestions */ = {
+			isa = PBXGroup;
+			children = (
+				344B39072B2E3016009E937A /* SugestionsTableViewCell.swift */,
+				344B390A2B2E312C009E937A /* SugestionTableViewCell.swift */,
+			);
+			path = Sugestions;
+			sourceTree = "<group>";
+		};
+		344B39092B2E3090009E937A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344B38FA2B2E217B009E937A /* HomeScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		B29CFD902B2DD4EA001C34F3 = {
@@ -442,8 +464,10 @@
 				B29CFE1F2B2E25EC001C34F3 /* HomeResponse.swift in Sources */,
 				B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */,
 				344B38DE2B2DED9C009E937A /* Loading.swift in Sources */,
+				344B390B2B2E312C009E937A /* SugestionTableViewCell.swift in Sources */,
 				B29CFE1A2B2E08D5001C34F3 /* LoginStore.swift in Sources */,
 				B29CFE232B2E26E7001C34F3 /* HomeStore.swift in Sources */,
+				344B39082B2E3016009E937A /* SugestionsTableViewCell.swift in Sources */,
 				344B38E12B2DEE59009E937A /* BaseViewController.swift in Sources */,
 				344B38E42B2DF01C009E937A /* Alert.swift in Sources */,
 				344B39052B2E2A2A009E937A /* EventsCollectionViewCell.swift in Sources */,

@@ -28,6 +28,7 @@ class HomeScreen: UIView {
         tableView.separatorStyle = .none
         tableView.register(AnimalsTableViewCell.self, forCellReuseIdentifier: AnimalsTableViewCell.identifier)
         tableView.register(NextEventsTableViewCell.self, forCellReuseIdentifier: NextEventsTableViewCell.identifier)
+        tableView.register(SugestionsTableViewCell.self, forCellReuseIdentifier: SugestionsTableViewCell.identifier)
         return tableView
     }()
     

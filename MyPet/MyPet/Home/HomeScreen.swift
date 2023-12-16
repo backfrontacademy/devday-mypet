@@ -27,6 +27,7 @@ class HomeScreen: UIView {
         tableView.backgroundColor = .whiteBackground
         tableView.separatorStyle = .none
         tableView.register(AnimalsTableViewCell.self, forCellReuseIdentifier: AnimalsTableViewCell.identifier)
+        tableView.register(NextEventsTableViewCell.self, forCellReuseIdentifier: NextEventsTableViewCell.identifier)
         return tableView
     }()
     

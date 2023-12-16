@@ -14,8 +14,8 @@ protocol HeaderViewProtocol: AnyObject {
 }
 
 extension HeaderViewProtocol {
-    func tappedBackButton() {/*opcional*/ }
-    func tappedUserButton() {/*opcional*/ }
+    func tappedBackButton() { /*opcional*/ }
+    func tappedUserButton() { /*opcional*/ }
 }
 
 class HeaderView: UIView {
@@ -120,7 +120,6 @@ class HeaderView: UIView {
             lineView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
-    
     
     public func configHeader(delegate: HeaderViewProtocol?, isBack: Bool) {
         self.delegate = delegate

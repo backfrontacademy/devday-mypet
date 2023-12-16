@@ -9,10 +9,15 @@ import UIKit
 
 class AnimalCollectionViewCell: UICollectionViewCell {
     
+    static let identifier: String = String(describing: AnimalCollectionViewCell.self)
+    
     lazy var dogImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "dogIsabela")
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -20,7 +25,7 @@ class AnimalCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .brownGrey
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         label.text = "Julio"
         return label
     }()
@@ -29,13 +34,14 @@ class AnimalCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .brownGrey
-        label.font = UIFont.systemFont(ofSize: 10)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
         label.text = "Pug - 2,5 anos"
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .whiteBackground
         addElements()
         configConstraints()
     }
@@ -53,16 +59,17 @@ class AnimalCollectionViewCell: UICollectionViewCell {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             dogImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            dogImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            dogImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
+            dogImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dogImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             dogImageView.heightAnchor.constraint(equalToConstant: 78),
             
             nameLabel.topAnchor.constraint(equalTo: dogImageView.bottomAnchor, constant: 9),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-//            descriptionLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>)
-            
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
     

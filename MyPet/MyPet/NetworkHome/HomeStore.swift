@@ -8,7 +8,7 @@
 import Foundation
 
 
-//url: https://run.mocky.io/v3/9ff0c09e-0f15-4b3d-a848-2dcbfa77dfa9
+//url: https://run.mocky.io/v3/c2ee6e46-4ed6-4008-a204-770e2fb69fba
 
 protocol HomeStore: GenericStore {
     

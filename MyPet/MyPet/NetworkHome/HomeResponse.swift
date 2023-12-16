@@ -1,9 +1,7 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  HomeResponse.swift
-//  MyPet
-//
-//  Created by Felipe Miranda on 16/12/23.
-//
+//   let homeResponse = try HomeResponse(json)
 
 import Foundation
 
@@ -192,7 +190,7 @@ extension Suggestions {
 
 // MARK: - Item
 struct Item: Codable {
-    let name, nextDate, iconImage: String
+    let name, nextDate, iconImage, color: String
 }
 
 // MARK: Item convenience initializers and mutators
@@ -216,12 +214,14 @@ extension Item {
     func with(
         name: String? = nil,
         nextDate: String? = nil,
-        iconImage: String? = nil
+        iconImage: String? = nil,
+        color: String? = nil
     ) -> Item {
         return Item(
             name: name ?? self.name,
             nextDate: nextDate ?? self.nextDate,
-            iconImage: iconImage ?? self.iconImage
+            iconImage: iconImage ?? self.iconImage,
+            color: color ?? self.color
         )
     }
 
@@ -392,4 +392,3 @@ func newJSONEncoder() -> JSONEncoder {
     }
     return encoder
 }
-

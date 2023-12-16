@@ -31,6 +31,8 @@
 		B29CFE1A2B2E08D5001C34F3 /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE192B2E08D5001C34F3 /* LoginStore.swift */; };
 		B29CFE1C2B2E0E99001C34F3 /* LoginDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE1B2B2E0E99001C34F3 /* LoginDataProvider.swift */; };
 		B29CFE1F2B2E25EC001C34F3 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE1E2B2E25EC001C34F3 /* HomeResponse.swift */; };
+		B29CFE212B2E26D9001C34F3 /* HomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE202B2E26D9001C34F3 /* HomeDataProvider.swift */; };
+		B29CFE232B2E26E7001C34F3 /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CFE222B2E26E7001C34F3 /* HomeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		B29CFE192B2E08D5001C34F3 /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
 		B29CFE1B2B2E0E99001C34F3 /* LoginDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataProvider.swift; sourceTree = "<group>"; };
 		B29CFE1E2B2E25EC001C34F3 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		B29CFE202B2E26D9001C34F3 /* HomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataProvider.swift; sourceTree = "<group>"; };
+		B29CFE222B2E26E7001C34F3 /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				B29CFE1E2B2E25EC001C34F3 /* HomeResponse.swift */,
+				B29CFE222B2E26E7001C34F3 /* HomeStore.swift */,
+				B29CFE202B2E26D9001C34F3 /* HomeDataProvider.swift */,
 			);
 			path = NetworkHome;
 			sourceTree = "<group>";
@@ -410,10 +416,12 @@
 				344B38CE2B2DDA9D009E937A /* LoginScreen.swift in Sources */,
 				B29CFE1C2B2E0E99001C34F3 /* LoginDataProvider.swift in Sources */,
 				B29CFD9D2B2DD4EA001C34F3 /* AppDelegate.swift in Sources */,
+				B29CFE212B2E26D9001C34F3 /* HomeDataProvider.swift in Sources */,
 				B29CFE1F2B2E25EC001C34F3 /* HomeResponse.swift in Sources */,
 				B29CFD9F2B2DD4EA001C34F3 /* SceneDelegate.swift in Sources */,
 				344B38DE2B2DED9C009E937A /* Loading.swift in Sources */,
 				B29CFE1A2B2E08D5001C34F3 /* LoginStore.swift in Sources */,
+				B29CFE232B2E26E7001C34F3 /* HomeStore.swift in Sources */,
 				344B38E12B2DEE59009E937A /* BaseViewController.swift in Sources */,
 				344B38E42B2DF01C009E937A /* Alert.swift in Sources */,
 				344B38D22B2DDF1B009E937A /* UIColor+Extension.swift in Sources */,

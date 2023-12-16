@@ -74,4 +74,13 @@ class AnimalCollectionViewCell: UICollectionViewCell {
     }
     
     
+    func setupCell(value: Pet?) {
+        
+        if let value = value {
+            self.dogImageView.image = UIImage(named: value.photo)
+            self.nameLabel.text = value.name
+            self.descriptionLabel.text =   "\(value.type), \(value.age)"
+        }
+    }
+    
 }

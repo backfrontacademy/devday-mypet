@@ -10,6 +10,7 @@ import UIKit
 class NextEventsTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: NextEventsTableViewCell.self)
+    private var arrayUpcomingEvents:[Event] = []
     
     lazy var nextEventsLabel: UILabel = {
         let label = UILabel()
@@ -84,16 +85,29 @@ class NextEventsTableViewCell: UITableViewCell {
     }
     
     
+    func setupCell(value: UpcomingEvents?) {
+        
+        if let value = value {
+            nextEventsLabel.text = value.title
+            arrayUpcomingEvents = value.events
+            collectionView.reloadData()
+        }
+    
+    }
+    
+    
 }
 
 extension NextEventsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.arrayUpcomingEvents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventsCollectionViewCell.identifier, for: indexPath) as? EventsCollectionViewCell
+        
+        cell?.setupCell(value: self.arrayUpcomingEvents[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     

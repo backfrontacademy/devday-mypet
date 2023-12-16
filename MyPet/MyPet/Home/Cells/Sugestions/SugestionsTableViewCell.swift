@@ -10,6 +10,7 @@ import UIKit
 class SugestionsTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: SugestionsTableViewCell.self)
+    private var arraySugestions:[Item] = []
     
     lazy var sugestionsLabel: UILabel = {
         let label = UILabel()
@@ -65,20 +66,33 @@ class SugestionsTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupCell() {
-        heightTableView.constant = 500
-        layoutIfNeeded()
+    func setupCell(value: Suggestions?) {
+        
+        if let value = value {
+            sugestionsLabel.text = value.title
+            arraySugestions = value.items
+            
+            heightTableView.constant = CGFloat(100 * arraySugestions.count)
+            layoutIfNeeded()
+            
+            tableView.reloadData()
+        }
+        
+        
     }
 
 }
 
 extension SugestionsTableViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arraySugestions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: SugestionTableViewCell.identifier, for: indexPath) as? SugestionTableViewCell
+        cell?.setup(value: arraySugestions[indexPath.row])
+        
         return cell ?? UITableViewCell()
     }
     

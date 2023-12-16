@@ -10,6 +10,7 @@ import UIKit
 class AnimalsTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: AnimalsTableViewCell.self)
+    private var arryPets:[Pet] = []
     
     lazy var animalsLabel: UILabel = {
         let label = UILabel()
@@ -84,16 +85,28 @@ class AnimalsTableViewCell: UITableViewCell {
     }
     
     
+    func setupCell(value: PetSection?) {
+        
+        if let petSection = value {
+            animalsLabel.text = petSection.title
+            arryPets = petSection.pets
+            self.collectionView.reloadData()
+        }
+    }
+    
 }
 
 extension AnimalsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.arryPets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionViewCell.identifier, for: indexPath) as? AnimalCollectionViewCell
+        
+        cell?.setupCell(value: self.arryPets[indexPath.row])
+        
         return cell ?? UICollectionViewCell()
     }
     

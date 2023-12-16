@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.headerProtocol(delegate: self)
-        screen?.configTableViewProtocols(delegate: self, dataSource: self)
+        
         dataProvider.setDelegate(delegate: self)
         dataProvider.getHome()
     }
@@ -41,21 +41,24 @@ extension HomeViewController: HeaderViewProtocol {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataProvider.numberOfRowsInSection(indexPath: <#T##IndexPath#>)
+        return self.dataProvider.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch TypeSections(rawValue: indexPath.row) {
         case .petSection:
             let cell = tableView.dequeueReusableCell(withIdentifier: AnimalsTableViewCell.identifier, for: indexPath) as? AnimalsTableViewCell
-            return cell ?? UITableViewCell()
-        case .suggestions:
-            let cell = tableView.dequeueReusableCell(withIdentifier: NextEventsTableViewCell.identifier, for: indexPath) as? NextEventsTableViewCell
+            cell?.setupCell(value: self.dataProvider.petSection)
             return cell ?? UITableViewCell()
         case .upcomingEvents:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NextEventsTableViewCell.identifier, for: indexPath) as? NextEventsTableViewCell
+            cell?.setupCell(value: self.dataProvider.upcomingEvents)
+            return cell ?? UITableViewCell()
+        case .suggestions:
             let cell = tableView.dequeueReusableCell(withIdentifier: SugestionsTableViewCell.identifier, for: indexPath) as? SugestionsTableViewCell
-            cell?.setupCell()
+            cell?.setupCell(value: self.dataProvider.suggestions)
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
@@ -66,6 +69,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeDataProviderProtocol {
     func success(model: Any?) {
         print(#function)
+        
+        screen?.configTableViewProtocols(delegate: self, dataSource: self)
+        screen?.tableView.reloadData()
+        
     }
     
     func errorData(error: NSError?) {

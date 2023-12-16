@@ -12,6 +12,7 @@ class EventsCollectionViewCell: UICollectionViewCell {
     static let identifier: String = String(describing: EventsCollectionViewCell.self)
     private var heightImage: CGFloat = 24
     
+    
     lazy var backGroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -105,5 +106,16 @@ class EventsCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    
+    func setupCell(value: Event?) {
+        
+        if let value = value {
+            
+            dogImageView.image = UIImage(named: value.photo)
+            titleLabel.text = value.type
+            dateLabel.text = value.date
+            adressLabel.text = value.address
+        }
+    }
     
 }

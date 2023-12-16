@@ -102,4 +102,16 @@ class SugestionTableViewCell: UITableViewCell {
     }
     
     
+    func setup(value: Item?) {
+        
+        if let value = value {
+            
+            iconImageView.image = UIImage(named: value.iconImage)?.withRenderingMode(.alwaysTemplate)
+            titleLabel.text = value.name
+            nextDateLabel.text = value.nextDate
+            titleLabel.textColor = UIColor(hex: value.color)
+            iconImageView.tintColor = UIColor(hex: value.color)
+        }
+    }
+    
 }

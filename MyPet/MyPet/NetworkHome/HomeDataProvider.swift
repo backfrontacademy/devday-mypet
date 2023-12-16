@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeSections: Int {
+enum TypeSections: Int, CaseIterable {
     case petSection = 0
     case upcomingEvents = 1
     case suggestions = 2
@@ -25,42 +25,40 @@ class HomeDataProvider: DataProviderManager <HomeDataProviderProtocol, HomeRespo
     
     private var apiStore: HomeAPIStore = HomeAPIStore()
     
+    
+    var numberOfRowsInSection: Int {
+        return TypeSections.allCases.count
+    }
+
+    var petSection: PetSection? {
+        return self.model?.petSection
+    }
+    
+    var upcomingEvents: UpcomingEvents? {
+        return self.model?.upcomingEvents
+    }
+    
+    var suggestions: Suggestions? {
+        return self.model?.suggestions
+    }
+    
     func setDelegate(delegate: HomeDataProviderProtocol) {
         self.delegate = delegate
     }
-    
-    func numberOfRowsInSection(section: Int) -> Int {
-        
-        switch section {
-        case TypeSections.petSection.rawValue:
-            return self.model?.petSection.pets.count ?? 0
-
-        case TypeSections.upcomingEvents.rawValue:
-            return self.model?.upcomingEvents.events.count ?? 0
-        case TypeSections.suggestions.rawValue:
-            return self.model?.suggestions.items.count ?? 0
-
-        default:
-            print("nao entrou em nenhum case")
-        }
-        
-        return 0
-    }
-    
-    func loadCurrentPet(indexPath: IndexPath) -> Pet? {
-        
-        return self.model?.petSection.pets[indexPath.row]
-    }
-    
-    func loadCurrentUpcomingEvents(indexPath: IndexPath) -> Event? {
-        
-        return self.model?.upcomingEvents.events[indexPath.row]
-    }
-    
-    func loadCurrentSuggestions(indexPath: IndexPath) -> Item? {
-        
-        return self.model?.suggestions.items[indexPath.row]
-    }
+//    func loadCurrentPet(indexPath: IndexPath) -> Pet? {
+//        
+//        return self.model?.petSection.pets[indexPath.row]
+//    }
+//    
+//    func loadCurrentUpcomingEvents(indexPath: IndexPath) -> Event? {
+//        
+//        return self.model?.upcomingEvents.events[indexPath.row]
+//    }
+//    
+//    func loadCurrentSuggestions(indexPath: IndexPath) -> Item? {
+//        
+//        return self.model?.suggestions.items[indexPath.row]
+//    }
     
     func numberOfSections() -> Int {
         

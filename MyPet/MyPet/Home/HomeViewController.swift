@@ -39,12 +39,20 @@ extension HomeViewController: HeaderViewProtocol {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AnimalsTableViewCell.identifier, for: indexPath) as? AnimalsTableViewCell
-        return cell ?? UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AnimalsTableViewCell.identifier, for: indexPath) as? AnimalsTableViewCell
+            return cell ?? UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NextEventsTableViewCell.identifier, for: indexPath) as? NextEventsTableViewCell
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
+        }
     }
 }
 

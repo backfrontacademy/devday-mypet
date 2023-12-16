@@ -1,5 +1,5 @@
 //
-//  AnimalsTableViewCell.swift
+//  NextEventsTableViewCell.swift
 //  MyPet
 //
 //  Created by Caio Fabrini on 16/12/23.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-class AnimalsTableViewCell: UITableViewCell {
+class NextEventsTableViewCell: UITableViewCell {
     
-    static let identifier: String = String(describing: AnimalsTableViewCell.self)
+    static let identifier: String = String(describing: NextEventsTableViewCell.self)
     
-    lazy var animalsLabel: UILabel = {
+    lazy var nextEventsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .brownGrey
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "Animais"
+        label.text = "Próximos Eventos"
         return label
     }()
     
@@ -30,6 +30,7 @@ class AnimalsTableViewCell: UITableViewCell {
         collectionView.backgroundColor = .whiteBackground
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(EventsCollectionViewCell.self, forCellWithReuseIdentifier: EventsCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -59,25 +60,25 @@ class AnimalsTableViewCell: UITableViewCell {
     }
     
     private func addElements() {
-        contentView.addSubview(animalsLabel)
+        contentView.addSubview(nextEventsLabel)
         contentView.addSubview(addButton)
         contentView.addSubview(collectionView)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            animalsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
-            animalsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            nextEventsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+            nextEventsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
-            addButton.centerYAnchor.constraint(equalTo: animalsLabel.centerYAnchor),
-            addButton.leadingAnchor.constraint(equalTo: animalsLabel.trailingAnchor, constant: 9),
+            addButton.centerYAnchor.constraint(equalTo: nextEventsLabel.centerYAnchor),
+            addButton.leadingAnchor.constraint(equalTo: nextEventsLabel.trailingAnchor, constant: 9),
             addButton.heightAnchor.constraint(equalToConstant: 16),
             addButton.widthAnchor.constraint(equalToConstant: 16),
             
-            collectionView.topAnchor.constraint(equalTo: animalsLabel.bottomAnchor, constant: 5),
+            collectionView.topAnchor.constraint(equalTo: nextEventsLabel.bottomAnchor, constant: 5),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 100),
+            collectionView.heightAnchor.constraint(equalToConstant: 80),
             collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
@@ -85,14 +86,20 @@ class AnimalsTableViewCell: UITableViewCell {
     
 }
 
-extension AnimalsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NextEventsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventsCollectionViewCell.identifier, for: indexPath) as? EventsCollectionViewCell
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 80)
     }
 
 }
+

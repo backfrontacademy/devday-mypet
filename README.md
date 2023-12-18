@@ -4,7 +4,7 @@ Este é um projeto usando o framework Vapor.
 
 ## Pré-requisitos
 
-- Swift (versão X.X.X ou superior)
+- Swift (versão 5.8 ou superior)
 - Docker (se desejar rodar com Docker)
 
 ## Configuração

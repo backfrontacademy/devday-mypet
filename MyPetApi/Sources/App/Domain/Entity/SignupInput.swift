@@ -10,7 +10,7 @@ enum AccountValidationError: CustomError {
 }
 
 
-internal struct SignupInput {
+struct SignupInput {
     let name: String
     let email: Email
     let password: Password

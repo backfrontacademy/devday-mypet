@@ -4,7 +4,7 @@ enum EmailValidationError: CustomError {
     
     case invalidEmail
     
-    internal var errorMessage: String {
+    var errorMessage: String {
         switch self {
         case .invalidEmail:
             return "invalid email"
@@ -12,7 +12,7 @@ enum EmailValidationError: CustomError {
     }
 }
 
-internal struct Email {
+struct Email {
     
     let value: String
     

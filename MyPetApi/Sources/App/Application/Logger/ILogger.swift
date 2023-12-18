@@ -1,4 +1,4 @@
 
-internal protocol ILogger: AnyObject {
+protocol ILogger: AnyObject {
     func log(message: String)
 }

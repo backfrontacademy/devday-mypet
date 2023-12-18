@@ -4,7 +4,7 @@ enum PasswordValidationError: CustomError {
     
     case invalidPassword
     
-    internal var errorMessage: String {
+    var errorMessage: String {
         switch self {
         case .invalidPassword:
             return "invalid password"
@@ -12,7 +12,7 @@ enum PasswordValidationError: CustomError {
     }
 }
 
-internal struct Password: Equatable {
+struct Password: Equatable {
     
     let value: String
     

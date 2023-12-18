@@ -9,7 +9,7 @@ final class SqlLiteDatabase: DatabaseConnection {
         self.databases = databases
     }
     
-    internal func open() throws -> Database {
+    func open() throws -> Database {
         databases.use(.sqlite(.memory), as: .sqlite)
         
         let database: Database? = databases.database(.sqlite,
@@ -23,7 +23,7 @@ final class SqlLiteDatabase: DatabaseConnection {
         return database
     }
     
-    internal func close() {
+    func close() {
         databases.shutdown()
         try? databases.threadPool.syncShutdownGracefully()
         try? databases.eventLoopGroup.syncShutdownGracefully()

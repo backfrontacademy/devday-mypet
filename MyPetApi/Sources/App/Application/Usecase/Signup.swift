@@ -23,7 +23,7 @@ final class Signup {
         self.logger = logger
     }
     
-    internal func execute(input: SignupInput) async throws {
+    func execute(input: SignupInput) async throws {
         logger.log(message: "Signup: \(input)")
         
         let existingAccount = try await accountRepository.getByEmail(email: input.email.value);

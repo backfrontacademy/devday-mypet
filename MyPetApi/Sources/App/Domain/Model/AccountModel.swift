@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-internal final class AccountModel: Model {
+final class AccountModel: Model {
 
     static let schema = "account"
     

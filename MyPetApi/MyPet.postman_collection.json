@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "a9ccaa05-2db4-49a0-bb24-e5b1270d0ffe",
+		"name": "MyPet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1324321"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Felipe\",\n    \"email\": \"felipe@gmail.com\",\n    \"password\": \"B@ckFr0ntPlus\",\n    \"confirmPassword\": \"B@ckFr0ntPlus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
